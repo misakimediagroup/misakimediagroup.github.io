@@ -194,12 +194,7 @@ nav .index a:hover {
   opacity: 1;
   -webkit-transition: all 0.5s;
   transition: all 0.5s; /*アニメーション設定*/
-  margin-left: 200px;
-}
-@media (min-width: 600px) {
-  .menu-content {
-    margin-left: 400px;
-  }
+  margin-left: 120px;
 }
 .menu-content a:hover {
   opacity: 0.5;
