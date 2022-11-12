@@ -1,0 +1,445 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  font-family: "Yu Gothic Medium";
+}
+
+a {
+  color: indianred;
+  font-weight: bold;
+}
+
+li {
+  margin-left: -20px;
+}
+
+nav {
+  width: 100%;
+  height: 77px;
+  opacity: 0.9;
+  z-index: 10;
+  position: fixed;
+  background-color: rgb(255, 224, 182);
+}
+@media (min-width: 800px) {
+  nav {
+    height: 138px;
+  }
+}
+nav .main-flame h1 {
+  font-family: serif;
+  margin: 8px 0 8px 4px;
+}
+@media (min-width: 800px) {
+  nav .main-flame h1 {
+    text-align: center;
+  }
+}
+nav .main-flame h1 a {
+  color: indianred;
+}
+nav .main-flame h1 .main-logo {
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 20px;
+}
+@media (min-width: 800px) {
+  nav .main-flame h1 .main-logo {
+    font-size: 34px;
+  }
+}
+nav .main-flame h1 .main-icon {
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  vertical-align: middle;
+  margin: 0 8px;
+}
+@media (min-width: 800px) {
+  nav .main-flame h1 .main-icon {
+    height: 64px;
+    width: 64px;
+    margin: 0 8px;
+  }
+}
+nav .main-flame h1 small {
+  font-size: 12px;
+}
+@media (min-width: 800px) {
+  nav .main-flame h1 small {
+    font-size: 14px;
+  }
+}
+nav .main-flame p {
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  color: black;
+  margin-left: 12px;
+}
+@media (min-width: 800px) {
+  nav .main-flame p {
+    text-align: center;
+    font-size: 14px;
+  }
+}
+nav .index {
+  display: none;
+  font-size: 18px;
+}
+@media (min-width: 800px) {
+  nav .index {
+    display: inline-block;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 60px;
+    padding: 4px 0 4px 0;
+    margin: 0;
+  }
+}
+nav .index li {
+  list-style: none;
+}
+nav .index a {
+  text-decoration: none;
+}
+nav .index a:hover {
+  opacity: 0.5;
+}
+
+.blank {
+  padding: 38px;
+  margin: 0;
+}
+@media (min-width: 800px) {
+  .blank {
+    padding: 65px;
+  }
+}
+
+.menu-btn {
+  position: fixed;
+  top: 4px;
+  right: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 56px;
+  width: 56px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 90;
+}
+@media (min-width: 800px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: indianred;
+  position: absolute;
+}
+
+.menu-btn span:before {
+  bottom: 10px;
+}
+
+.menu-btn span:after {
+  top: 10px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+.menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%; /*leftの値を変更してメニューを画面外へ*/
+  background-color: rgb(255, 255, 255);
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; /*アニメーション設定*/
+  margin-left: 80px;
+}
+.menu-content a:hover {
+  opacity: 0.5;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+  left: 0; /*メニューを画面内へ*/
+}
+
+.menu-content ul {
+  padding: 30px 10px 0;
+}
+
+.menu-content ul li {
+  border-bottom: solid 1px rgba(205, 92, 92, 0.212);
+  list-style: none;
+}
+
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: indianred;
+  text-decoration: none;
+  padding: 9px 15px 10px 16px;
+  position: relative;
+}
+
+.menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+
+.menu-icon a {
+  font-size: 45px;
+  color: #000;
+}
+
+@media (min-width: 1200px) {
+  #main {
+    padding: 0 70px;
+  }
+}
+#main img {
+  max-width: 600px;
+}
+@media (min-width: 600px) {
+  #main img {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  #main img {
+    max-width: 600px;
+  }
+}
+#main .main-message {
+  font-family: serif;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px red, 0 0 5px red;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+@media (min-width: 800px) {
+  #main .main-message {
+    font-size: 24px;
+  }
+}
+#main p {
+  font-family: serif;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 5px red, 0 0 5px red;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 0;
+  margin-top: 4px;
+}
+
+#introduction {
+  padding: 16px;
+  background-color: rgba(255, 192, 203, 0.137);
+}
+#introduction #intro {
+  padding-top: 78px;
+  margin-top: -78px;
+}
+@media (min-width: 800px) {
+  #introduction #intro {
+    padding-top: 138px;
+    margin-top: -138px;
+  }
+}
+#introduction .last-message {
+  font-weight: bold;
+  color: salmon;
+}
+
+#performance {
+  padding: 16px;
+  background-color: rgba(0, 128, 0, 0.089);
+}
+#performance #perfor {
+  padding-top: 78px;
+  margin-top: -78px;
+}
+@media (min-width: 800px) {
+  #performance #perfor {
+    padding-top: 138px;
+    margin-top: -138px;
+  }
+}
+#performance h5 {
+  margin-top: 2px;
+}
+#performance p {
+  font-weight: bold;
+  color: salmon;
+  margin-bottom: 0;
+}
+#performance p + p {
+  margin-top: 0;
+}
+#performance p + p + p {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+#charm {
+  padding: 16px;
+  background-color: rgba(255, 192, 203, 0.137);
+}
+#charm #char {
+  padding-top: 78px;
+  margin-top: -78px;
+}
+@media (min-width: 800px) {
+  #charm #char {
+    padding-top: 138px;
+    margin-top: -138px;
+  }
+}
+#charm .link {
+  color: salmon;
+  font-weight: bold;
+  padding-bottom: 0;
+  margin-bottom: 6px;
+}
+#charm .apeal {
+  margin: 16px;
+}
+#charm .apeal .twitter {
+  background-color: skyblue;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 8px;
+  margin-top: 0;
+}
+
+#question {
+  padding: 16px;
+  background-color: rgba(0, 128, 0, 0.089);
+}
+#question #ques {
+  padding-top: 78px;
+  margin-top: -78px;
+}
+@media (min-width: 800px) {
+  #question #ques {
+    padding-top: 138px;
+    margin-top: -138px;
+  }
+}
+#question h3 {
+  margin-bottom: 4px;
+}
+
+#sns {
+  padding: 16px;
+}
+#sns #sn {
+  padding-top: 78px;
+  margin-top: -78px;
+}
+@media (min-width: 800px) {
+  #sns #sn {
+    padding-top: 138px;
+    margin-top: -138px;
+  }
+}
+@media (min-width: 600px) {
+  #sns .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 4px;
+  }
+}
+@media (min-width: 600px) {
+  #sns .wrapper .sns-box {
+    width: calc(50% - 4px);
+  }
+}
+@media (min-width: 800px) {
+  #sns .wrapper .sns-box {
+    width: calc(25% - 12px);
+  }
+}
+#sns .subtitle {
+  border-bottom: 1px solid indianred;
+}
+
+footer {
+  background: gray;
+  color: white;
+  height: 48px;
+  padding: 8px 24px;
+}
+footer .takkaron {
+  color: white;
+}/*# sourceMappingURL=style.css.map */
