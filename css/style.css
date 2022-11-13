@@ -366,12 +366,15 @@ nav .index a:hover {
   margin: 16px;
 }
 #charm .apeal .twitter {
-  background-color: skyblue;
+  background-color: #1d9bf0;
   color: white;
   font-size: 16px;
   text-decoration: none;
   padding: 8px;
   margin-top: 0;
+}
+#charm .apeal .twitter :hover {
+  opacity: 0.5;
 }
 
 #question {
@@ -449,4 +452,10 @@ footer {
 }
 footer .takkaron {
   color: white;
+  background-color: #1d9bf0;
+  border-radius: 50%;
+  padding: 3px;
+}
+footer .takkaron:hover {
+  opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */
